@@ -39,6 +39,9 @@ gem 'bootstrap-sass'
 # Faker
 gem 'faker'
 
+# Devise Authentication gem
+gem 'devise'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
