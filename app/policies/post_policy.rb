@@ -1,4 +1,4 @@
-class PostPolicy < ApplicationPolicy
+cclass PostPolicy < ApplicationPolicy
 
   def index?
     true
