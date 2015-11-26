@@ -1,5 +1,5 @@
-<h1> <%= @topic.name %> </h1>
-<p class="lead"><%= @topic.description %></p>  
+<h1> <%= markdown @topic.name %> </h1>
+<p class="lead"><%= markdown @topic.description %></p>  
 <% if policy(@topic).create? %>
   <%= link_to "Edit topic", edit_topic_path(@topic), class: 'btn btn-success' %>  
 <% end %>
@@ -11,7 +11,7 @@
       <div class="media">
         <div class="media-body">
           <h4 class="media-heading">
-            <%= link_to post.title, [@topic, post] %>
+            <%= link_to (markdown post.title), [@topic, post] %>
           </h4>
           <small>
             submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %><br/>
