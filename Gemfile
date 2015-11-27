@@ -50,6 +50,15 @@ gem 'pundit'
 # Redcarpet - Markdown rendering
 gem 'redcarpet'
 
+# Carrierwave - Uploading files from rails
+gem 'carrierwave'
+
+# Mini_magick - processing images
+gem 'mini_magick'
+
+# FOG - gem for connecting ot cloud services
+gem 'fog'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
