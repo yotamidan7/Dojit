@@ -14,6 +14,8 @@ class Post < ActiveRecord::Base
   validates :topic, presence: true
   validates :user, presence: true
 
+  mount_uploader :image, ImageUploader
+
   def markdown_title 
     render_as_markdown title
   end

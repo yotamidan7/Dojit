@@ -17,6 +17,17 @@
     <%= f.label :body %>
     <%= f.text_area :body, class: 'form-control', plcaholder: "Enter post body" %>
   </div>
+  <% if post.image? %>
+    <div class="form-group">
+      <p>Current image</p>
+      <%= image_tag( post.image.thumb.url ) %>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  </div>
   <div class="form-group">
     <%= f.submit "Save", class: 'btn btn-success' %>
   </div>
