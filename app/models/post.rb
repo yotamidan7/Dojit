@@ -1,4 +1,8 @@
+require 'paginate'
+
 class Post < ActiveRecord::Base
+  extend Mypaginate
+
   belongs_to :user
   belongs_to :topic
   has_many :comments

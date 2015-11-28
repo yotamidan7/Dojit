@@ -1,12 +1,34 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topic.paginate(page: params[:page], per_page: 10)
+    #@topics = Topic.all
+
+    if params.has_key?(:page)
+      @page = params[:page]
+    else
+      @page = 0
+    end
+
+    puts "Page = "
+    puts @page
+
+    @topics = Topic.mypagination(page: @page, per_page: 10)[:results]
+    @batch_count = Topic.mypagination(page: @page, per_page: 10)[:batch_count]  
+
     authorize @topics
+
   end
 
   def show
+
+    if params.has_key?(:page)
+      @page = params[:page]
+    else
+      @page = 0
+    end
+
     @topic = Topic.find(params[:id])
-    @posts = @topic.posts.paginate(page: params[:page], per_page: 10)
+    @posts = @topic.posts.mypagination(page: @page, per_page: 10)[:results]
+    @batch_count = @topic.posts.mypagination(page: @page, per_page: 10)[:batch_count]
     authorize @topic
   end
 
