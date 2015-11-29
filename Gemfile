@@ -73,6 +73,12 @@ group :development do
 
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+
+  # BetterErrors for viewing better error messages in the browser
+  gem 'better_errors'
+
+    # Binding of Caller for enhanced Better Errors messages
+    gem 'binding_of_caller'
 end
 
 group :production do
