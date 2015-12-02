@@ -81,6 +81,11 @@ group :development do
     gem 'binding_of_caller'
 end
 
+group :test do 
+  # Rspec
+  gem 'rspec-rails', '~> 3.1.0'
+end
+
 group :production do
 
   gem 'pg'
