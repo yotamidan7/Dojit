@@ -1,5 +1,10 @@
 module ApplicationHelper
 
+  def my_name
+
+    return "Yotam \"Ze Pirate\" Idan"
+  end
+
   def form_group_tag(errors)
     if errors.any?
       'form-group has-error'
