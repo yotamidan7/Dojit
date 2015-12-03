@@ -41,7 +41,7 @@ class PostsController < ApplicationController
 
     authorize @post
     
-    if @post.update_attributes(post_params)
+    if q@post.update_attributes(post_params)
       flash[:notice] = "Post was updated."
       redirect_to [@topic, @post]
     else
